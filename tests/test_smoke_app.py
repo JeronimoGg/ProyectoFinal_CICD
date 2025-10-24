@@ -4,16 +4,18 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 import pytest
 
+
 # Fixture para configurar el navegador (similar a las pruebas de aceptación)
 @pytest.fixture
 def browser():
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")  # Ejecuta sin interfaz gráfica
-    options.add_argument("--no-sandbox") # Necesario para algunos entornos
-    options.add_argument("--disable-dev-shm-usage") # Necesario para algunos entornos
+    options.add_argument("--no-sandbox")  # Necesario para algunos entornos
+    options.add_argument("--disable-dev-shm-usage")  # Necesario para algunos entornos
     driver = webdriver.Chrome(options=options)
     yield driver
     driver.quit()
+
 
 def test_smoke_test(browser):
     """SMOKE TEST: Verifica carga básica y título."""
