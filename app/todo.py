@@ -12,7 +12,11 @@ def agregar_todo(todos, texto):
 
     # Generar ID único basado en el ID más alto existente + 1
     max_id = max([todo["id"] for todo in todos], default=0)
-    nuevo_todo = {"id": max_id + 1, "texto": texto.strip(), "completado": False}
+    nuevo_todo = {
+        "id": max_id + 1,
+        "texto": texto.strip(), 
+        "completado": False
+        }
     todos.append(nuevo_todo)
     return nuevo_todo
 

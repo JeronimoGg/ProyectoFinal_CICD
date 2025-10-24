@@ -11,7 +11,6 @@ from .todo import (
     agregar_todo,
     eliminar_todo,
     marcar_completado,
-    obtener_todos,
     limpiar_completados,
 )
 
